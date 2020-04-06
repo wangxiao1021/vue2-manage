@@ -1,10 +1,18 @@
 import fetch from '@/config/fetch'
 
 /**
- * 登陆
+ * 登录
  */
 
 export const login = data => fetch('/admin/login', data, 'POST');
+
+
+/**
+ * 修改密码
+ */
+
+export const changePass = data => fetch('/admin/changePass', data, 'POST');
+
 
 /**
  * 退出

@@ -14,16 +14,16 @@
 			          <el-form-item label="用户名" >
 			            <span>{{ props.row.user_name }}</span>
 			          </el-form-item>
-			          <el-form-item label="店铺名称">
+			          <el-form-item label="材料商名称">
 			            <span>{{ props.row.restaurant_name }}</span>
 			          </el-form-item>
 			          <el-form-item label="收货地址">
 			            <span>{{ props.row.address }}</span>
 			          </el-form-item>
-			          <el-form-item label="店铺 ID">
+			          <el-form-item label="材料商 ID">
 			            <span>{{ props.row.restaurant_id }}</span>
 			          </el-form-item>
-			          <el-form-item label="店铺地址">
+			          <el-form-item label="材料商地址">
 			            <span>{{ props.row.restaurant_address }}</span>
 			          </el-form-item>
 			        </el-form>
