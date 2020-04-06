@@ -11,7 +11,7 @@ export const login = data => fetch('/admin/login', data, 'POST');
  * 修改密码
  */
 
-export const changePass = data => fetch('/admin/changePass', data, 'POST');
+export const changePass = data => fetch('/changePass', data, 'POST');
 
 
 /**

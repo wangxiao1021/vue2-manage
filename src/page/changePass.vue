@@ -62,30 +62,20 @@
 		methods: {
 			...mapActions(['getAdminData']),
 			async submitForm(formName) {
-				this.$refs[formName].validate(async (valid) => {
-					if (valid) {
-						const res = await changePass({user_name: this.loginForm.username, password: this.loginForm.password, newPassword: this.loginForm.newPassword})
-						if (res.status == 1) {
-							this.$message({
-		                        type: 'success',
-		                        message: '修改成功'
-		                    });
-							this.$router.push('login')
-						}else{
-							this.$message({
-		                        type: 'error',
-		                        message: res.message
-		                    });
-						}
-					} else {
-						this.$notify.error({
-							title: '错误',
-							message: '用户名or旧密码错误',
-							offset: 100
-						});
-						return false;
-					}
-				});
+                const res = await changePass({user_name: this.loginForm.username, password: this.loginForm.password, newPassword: this.loginForm.newPassword})
+                if (res.status == 1) {
+                    this.$message({
+                        type: 'success',
+                        message: '修改成功'
+                    });
+                    this.$router.push('login')
+                }else{
+                    this.$message({
+                        type: 'error',
+                        message: res.message
+                    });
+                }
+
 			},
 		},
 		watch: {
