@@ -77,7 +77,7 @@ export const cityGuess = () => fetch('/v1/cities', {
 });
 
 /**
- * 添加商铺
+ * 添加材料商 （添加供应商）
  */
 
 export const addShop = data => fetch('/shopping/addShop', data, 'POST');

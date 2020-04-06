@@ -37,11 +37,11 @@ const routes = [
 		},{
 			path: '/addShop',
 			component: addShop,
-			meta: ['添加数据', '添加商铺'],
+			meta: ['添加数据', '添加材料商'],
 		},{
 			path: '/addGoods',
 			component: addGoods,
-			meta: ['添加数据', '添加商品'],
+			meta: ['添加数据', '添加项目'],
 		},{
 			path: '/userList',
 			component: userList,
@@ -49,11 +49,11 @@ const routes = [
 		},{
 			path: '/shopList',
 			component: shopList,
-			meta: ['数据管理', '商家列表'],
+			meta: ['数据管理', '材料商列表'],
 		},{
 			path: '/foodList',
 			component: foodList,
-			meta: ['数据管理', '食品列表'],
+			meta: ['数据管理', '项目列表'],
 		},{
 			path: '/orderList',
 			component: orderList,

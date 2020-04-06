@@ -8,16 +8,16 @@
                 <el-table-column type="expand">
                   <template slot-scope="props">
                     <el-form label-position="left" inline class="demo-table-expand">
-                      <el-form-item label="店铺名称">
+                      <el-form-item label="材料商名称">
                         <span>{{ props.row.name }}</span>
                       </el-form-item>
-                      <el-form-item label="店铺地址">
+                      <el-form-item label="材料商地址">
                         <span>{{ props.row.address }}</span>
                       </el-form-item>
-                      <el-form-item label="店铺介绍">
+                      <el-form-item label="材料商介绍">
                         <span>{{ props.row.description }}</span>
                       </el-form-item>
-                      <el-form-item label="店铺 ID">
+                      <el-form-item label="材料商 ID">
                         <span>{{ props.row.id }}</span>
                       </el-form-item>
                       <el-form-item label="联系电话">
@@ -36,15 +36,15 @@
                   </template>
                 </el-table-column>
                 <el-table-column
-                  label="店铺名称"
+                  label="材料商名称"
                   prop="name">
                 </el-table-column>
                 <el-table-column
-                  label="店铺地址"
+                  label="材料商地址"
                   prop="address">
                 </el-table-column>
                 <el-table-column
-                  label="店铺介绍"
+                  label="材料商介绍"
                   prop="description">
                 </el-table-column>
                 <el-table-column label="操作" width="200">
@@ -55,7 +55,7 @@
                     <el-button
                       size="mini"
                       type="Success"
-                      @click="addFood(scope.$index, scope.row)">添加食品</el-button>
+                      @click="addFood(scope.$index, scope.row)">添加项目</el-button>
                     <el-button
                       size="mini"
                       type="danger"
@@ -73,9 +73,9 @@
                   :total="count">
                 </el-pagination>
             </div>
-            <el-dialog title="修改店铺信息" v-model="dialogFormVisible">
+            <el-dialog title="修改材料商信息" v-model="dialogFormVisible">
                 <el-form :model="selectTable">
-                    <el-form-item label="店铺名称" label-width="100px">
+                    <el-form-item label="材料商名称" label-width="100px">
                         <el-input v-model="selectTable.name" auto-complete="off"></el-input>
                     </el-form-item>
                     <el-form-item label="详细地址" label-width="100px">
@@ -88,20 +88,20 @@
                         ></el-autocomplete>
                         <span>当前城市：{{city.name}}</span>
                     </el-form-item>
-                    <el-form-item label="店铺介绍" label-width="100px">
+                    <el-form-item label="材料商介绍" label-width="100px">
                         <el-input v-model="selectTable.description"></el-input>
                     </el-form-item>
                     <el-form-item label="联系电话" label-width="100px">
                         <el-input v-model="selectTable.phone"></el-input>
                     </el-form-item>
-                    <el-form-item label="店铺分类" label-width="100px">
+                    <el-form-item label="材料商分类" label-width="100px">
                         <el-cascader
                           :options="categoryOptions"
                           v-model="selectedCategory"
                           change-on-select
                         ></el-cascader>
                     </el-form-item>
-                    <el-form-item label="商铺图片" label-width="100px">
+                    <el-form-item label="材料商图片" label-width="100px">
                         <el-upload
                           class="avatar-uploader"
                           :action="baseUrl + '/v1/addimg/shop'"
@@ -236,7 +236,7 @@
                     if (res.status == 1) {
                         this.$message({
                             type: 'success',
-                            message: '删除店铺成功'
+                            message: '删除材料商成功'
                         });
                         this.tableData.splice(index, 1);
                     }else{
@@ -247,7 +247,7 @@
                         type: 'error',
                         message: err.message
                     });
-                    console.log('删除店铺失败')
+                    console.log('删除材料商失败')
                 }
             },
             async querySearchAsync(queryString, cb) {
@@ -298,7 +298,7 @@
                     if (res.status == 1) {
                         this.$message({
                             type: 'success',
-                            message: '更新店铺信息成功'
+                            message: '更新材料商信息成功'
                         });
                         this.getResturants();
                     }else{
