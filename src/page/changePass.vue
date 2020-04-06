@@ -25,7 +25,7 @@
 </template>
 
 <script>
-	import {changePass, getAdminInfo} from '@/api/getData'
+	import {changePass} from '@/api/getData'
 	import {mapActions, mapState} from 'vuex'
 
 	export default {
@@ -47,20 +47,20 @@
 						{ required: true, message: '请输入新密码', trigger: 'blur' }
 					],
 				},
-				showLogin: false,
+				showLogin: true,
 			}
 		},
-		mounted(){
-			this.showLogin = true;
-			if (!this.adminInfo.id) {
-    			this.getAdminData()
-    		}
-		},
-		computed: {
-			...mapState(['adminInfo']),
-		},
+		// mounted(){
+		// 	this.showLogin = true;
+		// 	if (!this.adminInfo.id) {
+    	// 		this.getAdminData()
+    	// 	}
+		// },
+		// computed: {
+		// 	...mapState(['adminInfo']),
+		// },
 		methods: {
-			...mapActions(['getAdminData']),
+			// ...mapActions(['getAdminData']),
 			async submitForm(formName) {
                 const res = await changePass({user_name: this.loginForm.username, password: this.loginForm.password, newPassword: this.loginForm.newPassword})
                 if (res.status == 1) {
@@ -78,17 +78,17 @@
 
 			},
 		},
-		watch: {
-			adminInfo: function (newValue){
-				if (newValue.id) {
-					this.$message({
-                        type: 'success',
-                        message: '检测到您之前登录过，将自动登录'
-                    });
-					this.$router.push('manage')
-				}
-			}
-		}
+		// watch: {
+		// 	adminInfo: function (newValue){
+		// 		if (newValue.id) {
+		// 			this.$message({
+        //                 type: 'success',
+        //                 message: '检测到您之前登录过，将自动登录'
+        //             });
+		// 			this.$router.push('manage')
+		// 		}
+		// 	}
+		// }
 	}
 </script>
 
